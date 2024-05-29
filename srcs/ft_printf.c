@@ -6,7 +6,7 @@
 /*   By: lbrahins <lbrahins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 15:02:42 by lbrahins          #+#    #+#             */
-/*   Updated: 2024/05/29 15:45:36 by lbrahins         ###   ########.fr       */
+/*   Updated: 2024/05/29 16:41:21 by lbrahins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	printer(char c, va_list aptr)
 		bytesread = print_char(va_arg(aptr, int));
 	else if (c == 's')
 		bytesread = print_string(va_arg(aptr, char *));
-	// else if (c == 'p')
-	// 	bytesread = print_pointer(va_arg(aptr, char));
+	else if (c == 'p')
+		bytesread = print_pointer(va_arg(aptr, void *));
 	// else if (c == 'd')
 	// 	bytesread = print_dec(va_arg(aptr, char));
 	// else if (c == 'i')
@@ -43,6 +43,8 @@ int	ft_printf(const char *format, ...)
 	int		bytesread;
 	va_list	aptr;
 
+	if (!format)
+		return (0);
 	va_start(aptr, format);
 	bytesread = 0;
 	while (*format)
@@ -60,7 +62,9 @@ int	main()
 {
 	char	c = 'o';
 	char	*s = "str";
-	int	bytesread = ft_printf("char:%c, string: %s", c, s);
+	char	*p = "coucou";
+	int	bytesread = ft_printf("char:%c, string: %s, pointer: %p", c, s, (void *)p);
+	printf("\nchar:%c, string: %s, pointer: %p", c, s, (void *)p);
 	printf("\n\ntotal bytes read: %d\n", bytesread);
 	return (0);
 }
