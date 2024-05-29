@@ -1,16 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbrahins <lbrahins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 15:02:42 by lbrahins          #+#    #+#             */
-/*   Updated: 2024/05/28 15:03:09 by lbrahins         ###   ########.fr       */
+/*   Created: 2024/05/28 15:04:34 by lbrahins          #+#    #+#             */
+/*   Updated: 2024/05/29 15:40:07 by lbrahins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_printf(const char *, ...)
-{
-	
-}
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+
+# include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <stdarg.h>
+
+int	print_char(char c);
+int	print_string(char *str);
+
+#endif
