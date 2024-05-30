@@ -1,0 +1,7 @@
+# stoopid vscode
+.vscode
+
+# all compiled stuff
+*.out
+*.a
+*.o
