@@ -6,7 +6,7 @@ int	print_str(char *str)
 
 	bytesread = 0;
 	if (!str)
-		return (0);
+		return (print_str("(null)"));
 	while (*str)
 		bytesread += print_char((int)*(str++));
 	return (bytesread);
