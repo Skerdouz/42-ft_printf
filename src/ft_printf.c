@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lbrahins <lbrahins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 15:02:42 by lbrahins          #+#    #+#             */
-/*   Updated: 2024/05/30 12:03:36 by marvin           ###   ########.fr       */
+/*   Updated: 2024/05/30 19:28:46 by lbrahins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,12 @@ int	ft_printf(const char *format, ...)
 
 // 	ft_printf("result: %p\n", (void *)ptr3);
 // 	printf("expected: %p\n\n", (void *)ptr3);
+
+// 	ft_printf("result: %x\n", -2147483647);
+// 	printf("expected: %x\n\n", -2147483647);
+
+// 	ft_printf("result: %X\n", -2147483647);
+// 	printf("expected: %X\n\n", -2147483647);
 
 // 	return 0;
 // }
