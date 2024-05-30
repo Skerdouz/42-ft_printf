@@ -53,3 +53,20 @@ int	ft_printf(const char *format, ...)
 	}
 	return (va_end(aptr), bytesread);
 }
+// int main() {
+// 	int *ptr1 = NULL;
+// 	int *ptr2 = (int *)0x0;
+// 	int x = 42;
+// 	int *ptr3 = &x;
+
+// 	ft_printf("result: %p\n", (void *)ptr1);
+// 	printf("expected: %p\n\n", (void *)ptr1);
+
+// 	ft_printf("result: %p\n", (void *)ptr2);
+// 	printf("expected: %p\n\n", (void *)ptr2);
+
+// 	ft_printf("result: %p\n", (void *)ptr3);
+// 	printf("expected: %p\n\n", (void *)ptr3);
+
+// 	return 0;
+// }
