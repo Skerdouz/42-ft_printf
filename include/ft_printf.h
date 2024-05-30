@@ -23,6 +23,7 @@ int	print_str(char *str);
 int	print_nbr(int nbr);
 int	print_unbr(unsigned int nbr);
 int	print_percent();
-int	print_hex(unsigned int nbr, const char format);
+int	print_hex(size_t nbr, const char format);
+int	print_ptr(void *ptr);
 
 #endif

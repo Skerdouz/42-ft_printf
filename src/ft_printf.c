@@ -25,10 +25,10 @@ static int	printer(const char format, va_list aptr)
 		bytesread = print_nbr(va_arg(aptr, int));
 	else if (format == 'u')
 		bytesread = print_unbr(va_arg(aptr, unsigned int));
-	// else if (format == 'p')
-	// 	bytesread = print_ptr();
+	else if (format == 'p')
+		bytesread = print_ptr(va_arg(aptr, void *));
 	else if (format == 'x' || format == 'X')
-		bytesread = print_hex(va_arg(aptr, unsigned int), format);
+		bytesread = print_hex(va_arg(aptr, size_t), format);
 	else if (format == '%')
 		bytesread = print_percent();
 	return (bytesread);
@@ -52,18 +52,4 @@ int	ft_printf(const char *format, ...)
 		format++;
 	}
 	return (va_end(aptr), bytesread);
-}
-
-int	main()
-{
-	char	c = 'o';
-	char	*s = "str";
-
-	//comparison
-	int	bytesread = ft_printf("char:%c, string: %s, hex: %X", c, s, 454354322);
-	printf("\nchar:%c, string: %s, hex: %X", c, s, 454354322);
-
-
-	printf("\n\ntotal bytes read: %d\n", bytesread);
-	return (0);
 }

@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-static int	sizecalc(unsigned int nbr)
+static int	sizecalc(size_t nbr)
 {
 	int	size;
 
@@ -13,7 +13,7 @@ static int	sizecalc(unsigned int nbr)
 	return (size);
 }
 
-static char	*ft_uitoa_hex(unsigned int nbr, const char format)
+static char	*ft_uitoa_hex(size_t nbr, const char format)
 {
 	char	*result;
 	int		size;
@@ -39,7 +39,7 @@ static char	*ft_uitoa_hex(unsigned int nbr, const char format)
 	return (result);
 }
 
-int	print_hex(unsigned int nbr, const char format)
+int	print_hex(size_t nbr, const char format)
 {
 	int		bytesread;
 	char	*result;
