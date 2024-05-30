@@ -1,39 +1,40 @@
 # vars
 NAME		=	libftprintf.a
-LIBFT		=	libft
 INCLUDES	=	include
 SRC_DIR		=	src/
 SRC_FILES	=	ft_printf
-SSRC_DIR	=	$(SRC_DIR)argprint/
-SSRC_FILES	=	print_char print_nbr print_str print_unbr
+PRT_DIR		=	$(SRC_DIR)argprint/
+PRT_FILES	=	print_char print_hex print_nbr  print_percent \
+				print_ptr print_str print_unbr
+UTIL_DIR	=	$(SRC_DIR)utils/
+UTIL_FILES	=	ft_itoa
 CC			=	cc
 CFLAGS		=	-Wall -Wextra -Werror -I $(INCLUDES)
 
 SRCS 	=	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
-SRCS 	+=	$(addprefix $(SSRC_DIR), $(addsuffix .c, $(SSRC_FILES)))
+SRCS 	+=	$(addprefix $(PRT_DIR), $(addsuffix .c, $(PRT_FILES)))
+SRCS 	+=	$(addprefix $(UTIL_DIR), $(addsuffix .c, $(UTIL_FILES)))
 OBJS	=	$(SRCS:.c=.o)
+
+%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 # main
 $(NAME):$(OBJS)
-		@make -C $(LIBFT)
-		@mv $(LIBFT)/libft.a .
-		@mv libft.a $(NAME)
 		@ar rcs $(NAME) $(OBJS)
-		@echo "\nProject succesfuly compiled✅"
+		@echo "✅	Project succesfuly compiled"
 
 all:	$(NAME)
 
 clean:
 		@rm -f $(OBJS)
-		@make clean -C $(LIBFT)
-		@echo "\nProject OBJS cleaned✅"
+		@echo "✅	Project OBJS cleaned"
 
 fclean:	clean
 		@rm -f $(NAME)
-		@make fclean -C $(LIBFT)
-		@echo "\nProject OBJS & EXE cleaned✅"
+		@echo "✅	All compiled project files cleaned"
 
 re:		fclean all
-		@echo "\nProject cleaned and rebuilt✅"
+		@echo "✅	Project cleaned and rebuilt"
 
 .PHONY:	all clean fclean re

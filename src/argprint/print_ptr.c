@@ -2,7 +2,7 @@
 
 int	print_ptr(void *ptr)
 {
-	int			bytesread;
+	int	bytesread;
 
 	bytesread = 0;
 	if (!ptr)

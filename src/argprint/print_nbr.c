@@ -1,4 +1,3 @@
-#include "libft.h"
 #include "ft_printf.h"
 
 int	print_nbr(int nbr)

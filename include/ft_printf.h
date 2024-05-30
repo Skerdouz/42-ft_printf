@@ -18,12 +18,17 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-int	print_char(int c);
-int	print_str(char *str);
-int	print_nbr(int nbr);
-int	print_unbr(unsigned int nbr);
-int	print_percent();
-int	print_hex(size_t nbr, const char format);
-int	print_ptr(void *ptr);
+//main
+int		ft_printf(const char *format, ...);
+//argsprint
+int		print_char(int c);
+int		print_str(char *str);
+int		print_nbr(int nbr);
+int		print_unbr(unsigned int nbr);
+int		print_percent(void);
+int		print_hex(size_t nbr, const char format);
+int		print_ptr(void *ptr);
+// utils
+char	*ft_itoa(int n);
 
 #endif
