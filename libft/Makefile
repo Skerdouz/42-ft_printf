@@ -22,18 +22,18 @@ CFLAGS =	-Wall -Wextra -Werror -I $(INCLUDES)
 
 
 ${NAME}: ${OBJS}
-	ar rcs ${NAME} ${OBJS}
+	@ar rcs ${NAME} ${OBJS}
 
 all: ${NAME}
 
 bonus: ${OBJS} ${OBJS_BONUS}
-	ar rcs ${NAME} ${OBJS} ${OBJS_BONUS}
+	@ar rcs ${NAME} ${OBJS} ${OBJS_BONUS}
 
 clean:
-	rm -f ${OBJS} ${OBJS_BONUS}
+	@rm -f ${OBJS} ${OBJS_BONUS}
 
 fclean: clean
-	rm -f ${NAME}
+	@rm -f ${NAME}
 
 re:		fclean all
 
