@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbrahins <lbrahins@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 15:02:42 by lbrahins          #+#    #+#             */
-/*   Updated: 2024/05/29 16:41:21 by lbrahins         ###   ########.fr       */
+/*   Updated: 2024/05/30 12:03:36 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 int	printer(char c, va_list aptr)
 {
@@ -63,8 +63,12 @@ int	main()
 	char	c = 'o';
 	char	*s = "str";
 	char	*p = "coucou";
-	int	bytesread = ft_printf("char:%c, string: %s, pointer: %p", c, s, (void *)p);
-	printf("\nchar:%c, string: %s, pointer: %p", c, s, (void *)p);
+
+	//comparison
+	int	bytesread = ft_printf("char:%c, string: %s, pointer: %p", c, s, p);
+	printf("\nchar:%c, string: %s, pointer: %p", c, s, p);
+
+
 	printf("\n\ntotal bytes read: %d\n", bytesread);
 	return (0);
 }
