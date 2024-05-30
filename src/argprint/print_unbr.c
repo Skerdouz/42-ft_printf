@@ -25,7 +25,7 @@ static char	*ft_uitoa(unsigned int nbr)
 	result[size] = '\0';
 	while (nbr)
 	{
-		result[size-- - 1] = (nbr % 10) + '0';
+		result[--size] = (nbr % 10) + '0';
 		nbr /= 10;
 	}
 	return (result);
