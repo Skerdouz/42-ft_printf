@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static int	printer(char format, va_list aptr)
+static int	printer(const char format, va_list aptr)
 {
 	int	bytesread;
 
