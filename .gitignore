@@ -5,3 +5,6 @@
 *.out
 *.a
 *.o
+
+# tester
+/ft_printf_tester-1.1
