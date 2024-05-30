@@ -29,8 +29,8 @@ static int	printer(char format, va_list aptr)
 	// 	bytesread = print_ptr();
 	// else if (format == 'x' || format == 'X')
 	// 	bytesread = print_hex();
-	// else if (format == '%')
-	// 	bytesread = print_percent();
+	else if (format == '%')
+		bytesread = print_percent();
 	return (bytesread);
 }
 
