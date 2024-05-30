@@ -18,8 +18,9 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-int	print_char(char c);
-int	print_string(char *str);
-int	print_pointer(void *ptr);
+int	print_char(int c);
+int	print_str(char *str);
+int	print_nbr(int nbr);
+int	print_unbr(unsigned int nbr);
 
 #endif
