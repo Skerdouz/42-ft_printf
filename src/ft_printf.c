@@ -6,7 +6,7 @@
 /*   By: lbrahins <lbrahins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 15:02:42 by lbrahins          #+#    #+#             */
-/*   Updated: 2024/05/30 19:30:22 by lbrahins         ###   ########.fr       */
+/*   Updated: 2024/05/31 09:54:10 by lbrahins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	printer(const char format, va_list aptr)
 	else if (format == 'p')
 		bytesread = print_ptr(va_arg(aptr, void *));
 	else if (format == 'x' || format == 'X')
-		bytesread = print_hex(va_arg(aptr, size_t), format);
+		bytesread = print_hex(va_arg(aptr, unsigned int), format);
 	else if (format == '%')
 		bytesread = print_percent();
 	return (bytesread);
@@ -53,26 +53,3 @@ int	ft_printf(const char *format, ...)
 	}
 	return (va_end(aptr), bytesread);
 }
-// int main() {
-// 	int *ptr1 = NULL;
-// 	int *ptr2 = (int *)0x0;
-// 	int x = 42;
-// 	int *ptr3 = &x;
-
-// 	ft_printf("result: %p\n", (void *)ptr1);
-// 	printf("expected: %p\n\n", (void *)ptr1);
-
-// 	ft_printf("result: %p\n", (void *)ptr2);
-// 	printf("expected: %p\n\n", (void *)ptr2);
-
-// 	ft_printf("result: %p\n", (void *)ptr3);
-// 	printf("expected: %p\n\n", (void *)ptr3);
-
-// 	ft_printf("result: %x\n", -2147483647);
-// 	printf("expected: %x\n\n", -2147483647);
-
-// 	ft_printf("result: %X\n", -2147483647);
-// 	printf("expected: %X\n\n", -2147483647);
-
-// 	return 0;
-// }
